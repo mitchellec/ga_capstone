@@ -5,12 +5,9 @@
 
 import streamlit as st
 st. set_page_config(layout="wide")
+
 import pandas as pd
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
-import h5py
-# this setting widens how many characters pandas will display in a column:
-pd.options.display.max_colwidth = 100
 
 if 'main' not in st.session_state:
     st.session_state['main'] = pd.read_csv("../data/details_data_extract.csv")
@@ -129,6 +126,3 @@ if submitted:
 
                         with st.expander("Game Description"):
                             st.markdown(rec.iloc[i+(per_row*loop)]['description'], unsafe_allow_html=True)
-
-#st.button('Get Recommendations', on_click = get_recommendations)
-#st.dataframe(get_recommendations())
