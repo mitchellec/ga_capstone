@@ -19,7 +19,8 @@ if 'rev_map' not in st.session_state:
     st.session_state['rev_map'] = pd.Series(st.session_state['main'].index, index=st.session_state['main']['name'])
 
 if 'cos_sim' not in st.session_state:
-    st.session_state['cos_sim'] = cosine_similarity(pd.read_csv("../data/cos_sim_data_extract.csv"))
+    # st.session_state['cos_sim'] = cosine_similarity(pd.read_csv("../data/cos_sim_data_extract.csv"))
+    st.session_state['cos_sim'] = pd.read_csv("../data/cos_sim_extract.csv").to_numpy()
 
 
 # In[2]:
